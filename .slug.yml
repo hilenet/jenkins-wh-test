@@ -1,0 +1,180 @@
+version: 1
+
+# default: 5proc
+worker_process: 5
+
+# like a ssh_config
+www: &www
+    target: /tmp/newdmm
+    port: 22
+    user: ec2-user
+    identify_file: ~/.ssh/target_private
+    proxy_server: step00
+
+step: &step
+    host_name: proxy.hile.ninja
+    port: 22
+    user: ec2-user
+    # use cci default
+    #identify_file: ~/.ssh/proxy_private
+
+target_branches:
+    master:
+        servers:
+            www0:
+                <<: *www
+                host_name: "10.0.1.10"
+            www1:
+                <<: *www
+                host_name: "10.0.1.11"
+            www2:
+                <<: *www
+                host_name: "10.0.1.12"
+            www3:
+                <<: *www
+                host_name: "10.0.1.13"
+            www4:
+                <<: *www
+                host_name: "10.0.1.14"
+            www5:
+                <<: *www
+                host_name: "10.0.1.15"
+            www6:
+                <<: *www
+                host_name: "10.0.1.16"
+            www7:
+                <<: *www
+                host_name: "10.0.1.17"
+            www8:
+                <<: *www
+                host_name: "10.0.1.18"
+            www9:
+                <<: *www
+                host_name: "10.0.1.19"
+            www10:
+                <<: *www
+                host_name: "10.0.1.20"
+            www11:
+                <<: *www
+                host_name: "10.0.1.21"
+            www12:
+                <<: *www
+                host_name: "10.0.1.22"
+            www13:
+                <<: *www
+                host_name: "10.0.1.23"
+            www14:
+                <<: *www
+                host_name: "10.0.1.24"
+            www15:
+                <<: *www
+                host_name: "10.0.1.25"
+            www16:
+                <<: *www
+                host_name: "10.0.1.26"
+            www17:
+                <<: *www
+                host_name: "10.0.1.27"
+            www18:
+                <<: *www
+                host_name: "10.0.1.28"
+            www19:
+                <<: *www
+                host_name: "10.0.1.29"
+            www20:
+                <<: *www
+                host_name: "10.0.1.30"
+            www21:
+                <<: *www
+                host_name: "10.0.1.31"
+            www22:
+                <<: *www
+                host_name: "10.0.1.32"
+            www23:
+                <<: *www
+                host_name: "10.0.1.33"
+            www24:
+                <<: *www
+                host_name: "10.0.1.34"
+            www25:
+                <<: *www
+                host_name: "10.0.1.35"
+            www26:
+                <<: *www
+                host_name: "10.0.1.36"
+            www27:
+                <<: *www
+                host_name: "10.0.1.37"
+            www28:
+                <<: *www
+                host_name: "10.0.1.38"
+            www29:
+                <<: *www
+                host_name: "10.0.1.39"
+            www30:
+                <<: *www
+                host_name: "10.0.1.40"
+            www31:
+                <<: *www
+                host_name: "10.0.1.41"
+            www32:
+                <<: *www
+                host_name: "10.0.1.42"
+            www33:
+                <<: *www
+                host_name: "10.0.1.43"
+            www34:
+                <<: *www
+                host_name: "10.0.1.44"
+            www35:
+                <<: *www
+                host_name: "10.0.1.45"
+            www36:
+                <<: *www
+                host_name: "10.0.1.46"
+            www37:
+                <<: *www
+                host_name: "10.0.1.47"
+            www38:
+                <<: *www
+                host_name: "10.0.1.48"
+            www39:
+                <<: *www
+                host_name: "10.0.1.49"
+            www40:
+                <<: *www
+                host_name: "10.0.1.50"
+            www41:
+                <<: *www
+                host_name: "10.0.1.51"
+            www42:
+                <<: *www
+                host_name: "10.0.1.52"
+            www43:
+                <<: *www
+                host_name: "10.0.1.53"
+            www44:
+                <<: *www
+                host_name: "10.0.1.54"
+            www45:
+                <<: *www
+                host_name: "10.0.1.55"
+            www46:
+                <<: *www
+                host_name: "10.0.1.56"
+            www47:
+                <<: *www
+                host_name: "10.0.1.57"
+            www48:
+                <<: *www
+                host_name: "10.0.1.58"
+            www49:
+                <<: *www
+                host_name: "10.0.1.59"
+        proxy_servers:
+            step00:
+                <<: *step
+        chat_notification:
+            integration: slack
+            webhook_url: https://hooks.slack.com/services/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
+
