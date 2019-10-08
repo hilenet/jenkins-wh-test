@@ -18,6 +18,7 @@ pipeline {
       }
       environment {
         SSH_KEY = credentials('proxy-private')
+        JENKINS_CRED = credentials('hilenet-cred')
       }
       steps {
         script {
