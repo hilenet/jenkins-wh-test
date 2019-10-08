@@ -16,7 +16,7 @@ step: &step
     port: 22
     user: ec2-user
     # use cci default
-    #identify_file: ~/.ssh/proxy_private
+    identify_file: /tmp/hoge
 
 target_branches:
     master:
