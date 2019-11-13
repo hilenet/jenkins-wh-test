@@ -24,6 +24,9 @@ pipeline {
         script {
           sh 'cp $SSH_KEY /tmp/hoge'
           sh 'slug -l .'
+          sh 'mkdir -p /tmp/fuga'
+          sh 'touch /tmp/fuga/bar'
+          archiveArtifacts artifacts: /tmp/fuga/*
         }
       }
     }
